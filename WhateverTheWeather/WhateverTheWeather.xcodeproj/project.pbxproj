@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		FC83BA7A24F8930E007DB918 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83BA7924F8930E007DB918 /* AppDelegate.swift */; };
 		FC83BA7C24F8930E007DB918 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83BA7B24F8930E007DB918 /* SceneDelegate.swift */; };
-		FC83BA7E24F8930E007DB918 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83BA7D24F8930E007DB918 /* MasterViewController.swift */; };
+		FC83BA7E24F8930E007DB918 /* CityListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83BA7D24F8930E007DB918 /* CityListTableViewController.swift */; };
 		FC83BA8024F8930E007DB918 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83BA7F24F8930E007DB918 /* DetailViewController.swift */; };
 		FC83BA8324F8930E007DB918 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC83BA8124F8930E007DB918 /* Main.storyboard */; };
 		FC83BA8524F89318007DB918 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC83BA8424F89318007DB918 /* Assets.xcassets */; };
@@ -41,7 +41,7 @@
 		FC83BA7624F8930E007DB918 /* WhateverTheWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhateverTheWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC83BA7924F8930E007DB918 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC83BA7B24F8930E007DB918 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FC83BA7D24F8930E007DB918 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		FC83BA7D24F8930E007DB918 /* CityListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListTableViewController.swift; sourceTree = "<group>"; };
 		FC83BA7F24F8930E007DB918 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FC83BA8224F8930E007DB918 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC83BA8424F89318007DB918 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 				FCA1E45924F9BCFE003677BD /* Networking */,
 				FC83BA7924F8930E007DB918 /* AppDelegate.swift */,
 				FC83BA7B24F8930E007DB918 /* SceneDelegate.swift */,
-				FC83BA7D24F8930E007DB918 /* MasterViewController.swift */,
+				FC83BA7D24F8930E007DB918 /* CityListTableViewController.swift */,
 				FC83BA7F24F8930E007DB918 /* DetailViewController.swift */,
 				FC83BA8124F8930E007DB918 /* Main.storyboard */,
 				FC83BA8424F89318007DB918 /* Assets.xcassets */,
@@ -288,7 +288,7 @@
 				FC83BA7C24F8930E007DB918 /* SceneDelegate.swift in Sources */,
 				FCA1E45E24F9CB5A003677BD /* City.swift in Sources */,
 				FCA1E45C24F9BD3A003677BD /* WeatherData.swift in Sources */,
-				FC83BA7E24F8930E007DB918 /* MasterViewController.swift in Sources */,
+				FC83BA7E24F8930E007DB918 /* CityListTableViewController.swift in Sources */,
 				FC83BA8024F8930E007DB918 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
