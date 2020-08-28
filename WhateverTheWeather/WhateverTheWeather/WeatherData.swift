@@ -8,13 +8,6 @@
 
 import Foundation
 
-
-//struct City {
-//    let name: String
-//    let long: Int
-//    let lat: Int
-//}
-
 struct WeatherSnapshot {
     
     let current: CurrentWeather
