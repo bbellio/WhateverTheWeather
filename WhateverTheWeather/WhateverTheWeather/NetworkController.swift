@@ -63,7 +63,6 @@ struct NetworkController {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         urlComponents?.queryItems = [latQueryItem, lonQueryItem, unitsQueryItem, apiKeyQueryItem]
         guard let finalURL = urlComponents?.url else { return }
-        print(finalURL)
         URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
             if let error = error {
                 print("Error in dataTask : \(error.localizedDescription) \n---\n \(error)")
@@ -90,7 +89,6 @@ struct NetworkController {
             return
         }
         let completeURL = imageURL.appendingPathComponent("\(imageIconString)@2x.png")
-        print(completeURL)
         URLSession.shared.dataTask(with: completeURL) { (data, _, error) in
             if let error = error {
                 print("Error in dataTask : \(error.localizedDescription) \n---\n \(error)")
@@ -106,6 +104,6 @@ struct NetworkController {
             }
             completion(image)
         }.resume()
-        
     }
+    
 }
