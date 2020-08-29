@@ -13,6 +13,7 @@ class CityListTableViewController: UITableViewController {
     
     // MARK: - Properties
     
+    // Abstract these
     private let cellIdentifier = "cityCell"
     private let segueIdentifier = "toDetailVC"
     private var subscriptions: [AnyCancellable] = []
@@ -61,19 +62,30 @@ class CityListTableViewController: UITableViewController {
     // MARK: - Networking
     
     func subscribeToCityData() {
-        var updatedCities: [City] = []
+//        var updatedCities: [City] = []
+//        for city in DisplayedCities.cities {
+//            var city = city
+//            NetworkController.publishWeatherData(for: city)
+//                .sink(receiveCompletion: { (completion) in
+//                    if case let .failure(error) = completion {
+//                        print(error)
+//                    }
+//                    self.cities = updatedCities
+//                }, receiveValue: { (weatherSnapshot) in
+//                    city.weather = weatherSnapshot
+//                    updatedCities.append(city)
+//                }).store(in: &subscriptions)
+//        }
+        
         for city in DisplayedCities.cities {
             var city = city
-            NetworkController.publishWeatherData(for: city)
-                .sink(receiveCompletion: { (completion) in
-                    if case let .failure(error) = completion {
-                        print(error)
-                    }
-                    self.cities = updatedCities
-                }, receiveValue: { (weatherSnapshot) in
-                    city.weather = weatherSnapshot
-                    updatedCities.append(city)
-                }).store(in: &subscriptions)
+            NetworkController.weather(for: city) { (weather) in
+                city.weather = weather
+                NetworkController.getImage(for: city) { (image) in
+                    city.weatherIconImage = image
+                    self.cities.append(city)
+                }
+            }
         }
     }
 }

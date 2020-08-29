@@ -25,6 +25,7 @@ class CityTableViewCell: UITableViewCell {
             cityTempLabel.text = "\(temp)℉"
         }
         self.cityWeatherIcon.image = city.weatherIconImage
+        self.selectionStyle = .none
     }
 
 }

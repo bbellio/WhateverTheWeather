@@ -3,4 +3,54 @@
    uuid = "A897C50C-8BFA-4B38-B02B-4B5CC182D53C"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A5A69086-DFBD-4978-91D2-AD22033AA9D5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WhateverTheWeather/NetworkController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "publishWeatherIcon(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A5A69086-DFBD-4978-91D2-AD22033AA9D5 - 7afb7a141a707a5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static WhateverTheWeather.NetworkController.publishWeatherIcon(for: WhateverTheWeather.City) -&gt; Combine.AnyPublisher&lt;__C.UIImage, Swift.Error&gt;"
+                  moduleName = "WhateverTheWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bethanywride/Desktop/iOS/Job%20Interviews/Assessment%20Apps/SnapAV/WhateverTheWeather/WhateverTheWeather/WhateverTheWeather/NetworkController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "3478">
+               </Location>
+               <Location
+                  uuid = "A5A69086-DFBD-4978-91D2-AD22033AA9D5 - 40cab152784deb6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Foundation.URLError) -&gt; Swift.Error in static WhateverTheWeather.NetworkController.publishWeatherIcon(for: WhateverTheWeather.City) -&gt; Combine.AnyPublisher&lt;__C.UIImage, Swift.Error&gt;"
+                  moduleName = "WhateverTheWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bethanywride/Desktop/iOS/Job%20Interviews/Assessment%20Apps/SnapAV/WhateverTheWeather/WhateverTheWeather/WhateverTheWeather/NetworkController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

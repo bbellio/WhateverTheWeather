@@ -111,18 +111,11 @@
 		FC83BA7824F8930E007DB918 /* WhateverTheWeather */ = {
 			isa = PBXGroup;
 			children = (
-				FCA1E45A24F9BD1D003677BD /* Data */,
+				FCA1E45A24F9BD1D003677BD /* Models */,
 				FCA1E45924F9BCFE003677BD /* Networking */,
 				FCA1E46024F9D5D5003677BD /* Views */,
-				FC83BA7924F8930E007DB918 /* AppDelegate.swift */,
-				FC83BA7B24F8930E007DB918 /* SceneDelegate.swift */,
-				FC83BA7D24F8930E007DB918 /* CityListTableViewController.swift */,
-				FC83BA7F24F8930E007DB918 /* CityDetailViewController.swift */,
-				FC83BA8124F8930E007DB918 /* Main.storyboard */,
-				FC83BA8424F89318007DB918 /* Assets.xcassets */,
-				FC83BA8624F89318007DB918 /* LaunchScreen.storyboard */,
-				FC83BA8924F89318007DB918 /* Info.plist */,
-				FCA1E46524F9DE9C003677BD /* Constants.swift */,
+				FCA1E46824FACE24003677BD /* Shared */,
+				FCA1E46A24FACE68003677BD /* Supporting Files */,
 			);
 			path = WhateverTheWeather;
 			sourceTree = "<group>";
@@ -153,21 +146,60 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
-		FCA1E45A24F9BD1D003677BD /* Data */ = {
+		FCA1E45A24F9BD1D003677BD /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				FCA1E45B24F9BD3A003677BD /* WeatherData.swift */,
 				FCA1E45D24F9CB5A003677BD /* City.swift */,
 			);
-			name = Data;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		FCA1E46024F9D5D5003677BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				FCA1E46124F9D610003677BD /* CityTableViewCell.swift */,
+				FCA1E46924FACE3D003677BD /* Storyboards */,
+				FCA1E46724FACDFD003677BD /* View Controllers */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		FCA1E46724FACDFD003677BD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC83BA7D24F8930E007DB918 /* CityListTableViewController.swift */,
+				FC83BA7F24F8930E007DB918 /* CityDetailViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FCA1E46824FACE24003677BD /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FCA1E46524F9DE9C003677BD /* Constants.swift */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		FCA1E46924FACE3D003677BD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FC83BA8124F8930E007DB918 /* Main.storyboard */,
+				FC83BA8624F89318007DB918 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		FCA1E46A24FACE68003677BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC83BA8424F89318007DB918 /* Assets.xcassets */,
+				FC83BA8924F89318007DB918 /* Info.plist */,
+				FC83BA7924F8930E007DB918 /* AppDelegate.swift */,
+				FC83BA7B24F8930E007DB918 /* SceneDelegate.swift */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

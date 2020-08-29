@@ -10,6 +10,13 @@ import Foundation
 import Combine
 import UIKit
 
+struct SpecialError: Error {
+    let error: URLError
+    init(_ error: URLError) {
+        self.error = error
+    }
+}
+
 struct NetworkController {
     
     static func publishWeatherData(for city: City) -> AnyPublisher<WeatherSnapshot, Error> {
@@ -24,6 +31,26 @@ struct NetworkController {
         return URLSession.shared.dataTaskPublisher(for: finalURL)
             .map({$0.data})
             .decode(type: WeatherSnapshot.self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
+//            .zip(publishWeatherIcon(for: city))
+//            .eraseToAnyPublisher()
+    }
+    
+    static func publishWeatherIcon(for city: City) -> AnyPublisher<UIImage, Error> {
+        guard let baseURL = Constants.baseURL else { return Just(UIImage()).setFailureType(to: Error.self).eraseToAnyPublisher() }
+        let latQueryItem = URLQueryItem(name: Constants.lat, value: "\(city.lat)")
+        let lonQueryItem = URLQueryItem(name: Constants.lon, value: "\(city.lon)")
+        let unitsQueryItem = URLQueryItem(name: Constants.units, value: Constants.unitsValue)
+        let apiKeyQueryItem = URLQueryItem(name: Constants.appID, value: Constants.apiKey)
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        urlComponents?.queryItems = [latQueryItem, lonQueryItem, unitsQueryItem, apiKeyQueryItem]
+        guard let finalURL = urlComponents?.url else { return Just(UIImage()).setFailureType(to: Error.self).eraseToAnyPublisher() }
+        return URLSession.shared.dataTaskPublisher(for: finalURL)
+            .map({$0.data})
+            .map({(UIImage(data: $0) ?? UIImage())})
+            .mapError({ (error) -> Error in
+                return SpecialError(error)
+            })
             .eraseToAnyPublisher()
     }
     

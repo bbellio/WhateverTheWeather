@@ -47,7 +47,8 @@ class CityDetailViewController: UIViewController {
             highTempLabel.text = "\(Constants.highOf) \(maxTemp)℉"
         }
         if let chanceOfPrecipitation = city.weather?.daily.first?.chanceOfPrecipitaion {
-            chanceOfPrecipitationLabel.text = "\(chanceOfPrecipitation) \(Constants.chanceOfPrecipitationString)"
+            let percentage = Int(chanceOfPrecipitation * 100)
+            chanceOfPrecipitationLabel.text = "\(percentage)\(Constants.chanceOfPrecipitationString)"
         }
         title = "\(city.name) Weather"
     }
