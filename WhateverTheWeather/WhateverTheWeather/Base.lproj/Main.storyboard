@@ -83,7 +83,7 @@
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="City Weather" id="mOI-FS-AaM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,7 +98,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="WCw-Qf-5nD" customClass="CityTableViewCell" customModule="WhateverTheWeather" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cityCell" id="WCw-Qf-5nD" customClass="CityTableViewCell" customModule="WhateverTheWeather" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
@@ -156,7 +156,7 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Cities" id="Zdf-7t-Un8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
