@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WeatherSnapshot {
+struct WeatherSnapshot: Decodable {
     
     let current: CurrentWeather
     let daily: [DailyWeather]
@@ -16,21 +16,21 @@ struct WeatherSnapshot {
     
 }
 
-struct CurrentWeather {
+struct CurrentWeather: Decodable {
     
     let temp: Int
     let weather: [WeatherFacts]
     
 }
 
-struct WeatherFacts {
+struct WeatherFacts: Decodable {
     
 //    let description: String
     let icon: String
     
 }
 
-struct DailyWeather {
+struct DailyWeather: Decodable {
     
     // arbitrarily picking daily for pop
     
@@ -42,9 +42,10 @@ struct DailyWeather {
     
 }
 
-struct Temperature {
+struct Temperature: Decodable {
     
     let min: Int
     let max: Int
     
 }
+
