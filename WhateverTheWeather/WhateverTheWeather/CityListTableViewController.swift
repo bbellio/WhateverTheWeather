@@ -79,7 +79,7 @@ class CityListTableViewController: UITableViewController {
         
         for city in DisplayedCities.cities {
             var city = city
-            NetworkController.weather(for: city) { (weather) in
+            NetworkController.getWeather(for: city) { (weather) in
                 city.weather = weather
                 NetworkController.getImage(for: city) { (image) in
                     city.weatherIconImage = image

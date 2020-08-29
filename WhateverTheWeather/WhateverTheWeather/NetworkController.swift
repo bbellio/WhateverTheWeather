@@ -54,7 +54,7 @@ struct NetworkController {
             .eraseToAnyPublisher()
     }
     
-    static func weather(for city: City, completion: @escaping (WeatherSnapshot) -> Void) {
+    static func getWeather(for city: City, completion: @escaping (WeatherSnapshot) -> Void) {
         guard let baseURL = Constants.baseURL else { return }
         let latQueryItem = URLQueryItem(name: Constants.lat, value: "\(city.lat)")
         let lonQueryItem = URLQueryItem(name: Constants.lon, value: "\(city.lon)")
