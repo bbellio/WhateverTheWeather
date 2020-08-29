@@ -29,6 +29,7 @@ class CityListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchCityData()
+        tableView.rowHeight = 44
     }
     
     
