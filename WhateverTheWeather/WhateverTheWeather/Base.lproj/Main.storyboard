@@ -154,7 +154,7 @@
                                     <outlet property="cityNameLabel" destination="xQE-Pc-9yf" id="ftI-De-A5n"/>
                                     <outlet property="cityTempLabel" destination="6xJ-xa-ymo" id="t4E-8u-Kfp"/>
                                     <outlet property="cityWeatherIcon" destination="OI4-9r-nfY" id="JdP-bN-Vvf"/>
-                                    <segue destination="JEX-9P-axG" kind="show" id="Pkn-Yj-QFt"/>
+                                    <segue destination="JEX-9P-axG" kind="show" identifier="toDetailVC" id="Pkn-Yj-QFt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

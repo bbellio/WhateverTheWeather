@@ -41,14 +41,15 @@ class DetailViewController: UIViewController {
             currentTempLabel.text = "\(currentTemp)℉"
         }
         if let minTemp = city.weather?.daily.first?.temp.min {
-            lowTempLabel.text = "\(minTemp)℉"
+            lowTempLabel.text = "\(Constants.lowOf) \(minTemp)℉"
         }
         if let maxTemp = city.weather?.daily.first?.temp.max {
-            highTempLabel.text = "\(maxTemp)℉"
+            highTempLabel.text = "\(Constants.highOf) \(maxTemp)℉"
         }
         if let chanceOfPrecipitation = city.weather?.daily.first?.chanceOfPrecipitaion {
             chanceOfPrecipitationLabel.text = "\(chanceOfPrecipitation) \(Constants.chanceOfPrecipitationString)"
         }
+        title = "\(city.name) Weather"
     }
     
 }

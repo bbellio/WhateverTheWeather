@@ -14,6 +14,7 @@ class CityListTableViewController: UITableViewController {
     // MARK: - Properties
     
     private let cellIdentifier = "cityCell"
+    private let segueIdentifier = "toDetailVC"
     private var subscription: AnyCancellable?
     private var cities: [City] = [] {
         didSet {
@@ -50,7 +51,11 @@ class CityListTableViewController: UITableViewController {
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //
+        if segue.identifier == segueIdentifier {
+            guard let indexPath = tableView.indexPathForSelectedRow,
+                           let destination = segue.destination as? DetailViewController else { return }
+                       destination.city = cities[indexPath.row]
+        }
     }
     
     

@@ -26,5 +26,7 @@ struct Constants {
     
     // MARK: - Details Page
     
-    static let chanceOfPrecipitationString = "chance of precipitation"
+    static let chanceOfPrecipitationString = "percent chance of precipitation"
+    static let highOf = "high of"
+    static let lowOf = "low of"
 }
