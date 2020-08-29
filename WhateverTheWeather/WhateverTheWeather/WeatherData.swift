@@ -33,8 +33,9 @@ struct DailyWeather: Decodable {
     // arbitrarily picking daily for pop
     private enum CodingKeys: String, CodingKey {
         case chanceOfPrecipitaion = "pop"
+        case temp = "temp"
     }
-    
+    let temp: Temperature
     let chanceOfPrecipitaion: Double
     
 }

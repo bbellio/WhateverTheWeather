@@ -23,4 +23,8 @@ struct Constants {
     // A fake snapshot data to publish when failing
     static let failed = WeatherSnapshot(current: CurrentWeather(temp: 0, weather: []), daily: [])
     
+    
+    // MARK: - Details Page
+    
+    static let chanceOfPrecipitationString = "chance of precipitation"
 }

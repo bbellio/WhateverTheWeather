@@ -32,19 +32,19 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ocA-aR-uk2">
-                                        <rect key="frame" x="96.5" y="233" width="189.5" height="122"/>
+                                        <rect key="frame" x="89" y="233" width="204" height="122"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88℉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUy-We-X4n">
-                                                <rect key="frame" x="58" y="0.0" width="73.5" height="41"/>
+                                                <rect key="frame" x="65.5" y="0.0" width="73.5" height="41"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XhP-PF-ln4">
-                                                <rect key="frame" x="0.0" y="65" width="189.5" height="57"/>
+                                                <rect key="frame" x="0.0" y="65" width="204" height="57"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="aVN-MI-boU">
-                                                        <rect key="frame" x="8" y="0.0" width="173" height="20.5"/>
+                                                        <rect key="frame" x="15.5" y="0.0" width="173" height="20.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="high 88℉" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zt6-5U-Vjl">
                                                                 <rect key="frame" x="0.0" y="0.0" width="76" height="20.5"/>
@@ -60,8 +60,8 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0% chain of precipitation" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI3-tj-UPn">
-                                                        <rect key="frame" x="0.0" y="36.5" width="189.5" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0% chance of precipitation" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI3-tj-UPn">
+                                                        <rect key="frame" x="0.0" y="36.5" width="204" height="20.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -84,6 +84,14 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="City Weather" id="mOI-FS-AaM"/>
+                    <connections>
+                        <outlet property="chanceOfPrecipitationLabel" destination="zI3-tj-UPn" id="lbh-pR-zfv"/>
+                        <outlet property="cityNameLabel" destination="h6a-8N-yT7" id="OvO-1L-cmJ"/>
+                        <outlet property="cityWeatherIcon" destination="bXJ-rQ-DEP" id="K5Q-dd-MWn"/>
+                        <outlet property="currentTempLabel" destination="EUy-We-X4n" id="AKB-O6-gc5"/>
+                        <outlet property="highTempLabel" destination="rdH-cM-pKA" id="VT2-F7-4h2"/>
+                        <outlet property="lowTempLabel" destination="zt6-5U-Vjl" id="kbu-Aq-yOj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>

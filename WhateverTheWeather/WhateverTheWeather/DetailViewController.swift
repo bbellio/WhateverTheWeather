@@ -9,32 +9,47 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = detailItem {
-            if let label = detailDescriptionLabel {
-                label.text = detail.description
-            }
-        }
-    }
-
+    
+    // MARK: - Properties
+    
+    var city: City?
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var cityWeatherIcon: UIImageView!
+    @IBOutlet weak var currentTempLabel: UILabel!
+    @IBOutlet weak var lowTempLabel: UILabel!
+    @IBOutlet weak var highTempLabel: UILabel!
+    @IBOutlet weak var chanceOfPrecipitationLabel: UILabel!
+    
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        configureView()
+        updateView()
     }
-
-    var detailItem: NSDate? {
-        didSet {
-            // Update the view.
-            configureView()
+    
+    // MARK: - Methods
+    
+    func updateView() {
+        guard let city = city else { return }
+        cityNameLabel.text = city.name
+        cityWeatherIcon.image = city.weatherIconImage
+        if let currentTemp = city.weather?.current.temp {
+            currentTempLabel.text = "\(currentTemp)℉"
+        }
+        if let minTemp = city.weather?.daily.first?.temp.min {
+            lowTempLabel.text = "\(minTemp)℉"
+        }
+        if let maxTemp = city.weather?.daily.first?.temp.max {
+            highTempLabel.text = "\(maxTemp)℉"
+        }
+        if let chanceOfPrecipitation = city.weather?.daily.first?.chanceOfPrecipitaion {
+            chanceOfPrecipitationLabel.text = "\(chanceOfPrecipitation) \(Constants.chanceOfPrecipitationString)"
         }
     }
-
-
+    
 }
 
