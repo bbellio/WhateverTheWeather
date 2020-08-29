@@ -13,7 +13,9 @@ struct City {
     let name: String
     let lon: Double
     let lat: Double
-    let weather: WeatherSnapshot? = nil
+    // Assigned
+    var weather: WeatherSnapshot? = nil
+    
 }
 
 struct HardCodedCities {

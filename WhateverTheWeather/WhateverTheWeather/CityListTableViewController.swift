@@ -7,20 +7,26 @@
 //
 
 import UIKit
-
+import Combine
 
 class CityListTableViewController: UITableViewController {
     
     // MARK: - Properties
     
     private let cellIdentifier = "cityCell"
-    private var cities: [City] = []
+    private var subscription: AnyCancellable?
+    private var cities: [City] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        subscribeToCityData()
     }
     
     
@@ -46,5 +52,24 @@ class CityListTableViewController: UITableViewController {
         //
     }
     
+    
+    // MARK: - Networking
+    
+    func subscribeToCityData() {
+        var updatedCities: [City] = []
+        for city in DisplayedCities.cities {
+            var city = city
+            subscription = NetworkController.publishWeatherData(for: city)
+                .sink(receiveCompletion: { (completion) in
+                    if case let .failure(error) = completion {
+                        print(error)
+                    }
+                }, receiveValue: { (weatherSnapshot) in
+                    city.weather = weatherSnapshot
+                    updatedCities.append(city)
+                })
+        }
+        cities = updatedCities
+    }
 }
 
