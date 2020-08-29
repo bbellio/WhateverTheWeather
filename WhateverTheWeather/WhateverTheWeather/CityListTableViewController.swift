@@ -15,10 +15,9 @@ class CityListTableViewController: UITableViewController {
     
     private let cellIdentifier = "cityCell"
     private let segueIdentifier = "toDetailVC"
-    private var subscription: AnyCancellable?
+    private var subscriptions: [AnyCancellable] = []
     private var cities: [City] = [] {
         didSet {
-            print("City count is \(self.cities.count)")
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -53,8 +52,8 @@ class CityListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifier {
             guard let indexPath = tableView.indexPathForSelectedRow,
-                           let destination = segue.destination as? CityDetailViewController else { return }
-                       destination.city = cities[indexPath.row]
+                let destination = segue.destination as? CityDetailViewController else { return }
+            destination.city = cities[indexPath.row]
         }
     }
     
@@ -62,29 +61,19 @@ class CityListTableViewController: UITableViewController {
     // MARK: - Networking
     
     func subscribeToCityData() {
-//        var updatedCities: [City] = []
-//        for city in DisplayedCities.cities {
-//            var city = city
-//            subscription = NetworkController.publishWeatherData(for: city)
-//                .sink(receiveCompletion: { (completion) in
-//                    if case let .failure(error) = completion {
-//                        print(error)
-//                    }
-//                    self.cities = updatedCities
-//                }, receiveValue: { (weatherSnapshot) in
-//                    city.weather = weatherSnapshot
-//                    updatedCities.append(city)
-//                })
-//        }
+        var updatedCities: [City] = []
         for city in DisplayedCities.cities {
             var city = city
-            NetworkController.weather(for: city) { (snapshot) in
-                city.weather = snapshot
-                NetworkController.getImage(for: city) { (image) in
-                    city.weatherIconImage = image
-                    self.cities.append(city)
-                }
-            }
+            NetworkController.publishWeatherData(for: city)
+                .sink(receiveCompletion: { (completion) in
+                    if case let .failure(error) = completion {
+                        print(error)
+                    }
+                    self.cities = updatedCities
+                }, receiveValue: { (weatherSnapshot) in
+                    city.weather = weatherSnapshot
+                    updatedCities.append(city)
+                }).store(in: &subscriptions)
         }
     }
 }
