@@ -26,7 +26,7 @@ class CityListTableViewCellUITests: XCTestCase {
         app.launch()
     }
 
-    func testCityTableViewCellDisplaysAllVisualElements() throws {
+    func testCityTableViewCellDisplaysStaticTexts() throws {
         XCTAssertTrue(cell.exists)
         sleep(2)
         XCTAssertTrue(nameLabel.exists)
