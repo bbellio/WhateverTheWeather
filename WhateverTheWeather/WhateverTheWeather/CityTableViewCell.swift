@@ -10,15 +10,18 @@ import UIKit
 
 class CityTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    // MARK: - Outlets
+    
+    @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var cityTempLabel: UILabel!
+    @IBOutlet weak var cityWeatherIcon: UIImageView!
+    
+    
+    // MARK: - Methods
+    
+    func update(with name: String, temp: Int) {
+        cityNameLabel.text = name
+        cityTempLabel.text = "\(temp)℉"
     }
 
 }

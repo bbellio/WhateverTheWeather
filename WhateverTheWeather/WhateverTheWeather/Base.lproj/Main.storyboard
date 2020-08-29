@@ -98,7 +98,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="WCw-Qf-5nD">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="WCw-Qf-5nD" customClass="CityTableViewCell" customModule="WhateverTheWeather" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
@@ -143,6 +143,9 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
+                                    <outlet property="cityNameLabel" destination="xQE-Pc-9yf" id="ftI-De-A5n"/>
+                                    <outlet property="cityTempLabel" destination="6xJ-xa-ymo" id="t4E-8u-Kfp"/>
+                                    <outlet property="cityWeatherIcon" destination="OI4-9r-nfY" id="JdP-bN-Vvf"/>
                                     <segue destination="JEX-9P-axG" kind="show" id="Pkn-Yj-QFt"/>
                                 </connections>
                             </tableViewCell>
