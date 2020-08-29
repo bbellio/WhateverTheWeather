@@ -17,7 +17,10 @@ class CityListTableViewController: UITableViewController {
     private var subscription: AnyCancellable?
     private var cities: [City] = [] {
         didSet {
-            tableView.reloadData()
+            print("City count is \(self.cities.count)")
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -39,9 +42,7 @@ class CityListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CityTableViewCell else { return UITableViewCell() }
         let city = cities[indexPath.row]
-        if let cityWeather = city.weather {
-            cell.update(with: city.name, temp: cityWeather.current.temp)
-        }
+        cell.update(with: city)
         return cell
     }
     
@@ -56,20 +57,30 @@ class CityListTableViewController: UITableViewController {
     // MARK: - Networking
     
     func subscribeToCityData() {
-        var updatedCities: [City] = []
+//        var updatedCities: [City] = []
+//        for city in DisplayedCities.cities {
+//            var city = city
+//            subscription = NetworkController.publishWeatherData(for: city)
+//                .sink(receiveCompletion: { (completion) in
+//                    if case let .failure(error) = completion {
+//                        print(error)
+//                    }
+//                    self.cities = updatedCities
+//                }, receiveValue: { (weatherSnapshot) in
+//                    city.weather = weatherSnapshot
+//                    updatedCities.append(city)
+//                })
+//        }
         for city in DisplayedCities.cities {
             var city = city
-            subscription = NetworkController.publishWeatherData(for: city)
-                .sink(receiveCompletion: { (completion) in
-                    if case let .failure(error) = completion {
-                        print(error)
-                    }
-                }, receiveValue: { (weatherSnapshot) in
-                    city.weather = weatherSnapshot
-                    updatedCities.append(city)
-                })
+            NetworkController.weather(for: city) { (snapshot) in
+                city.weather = snapshot
+                NetworkController.getImage(for: city) { (image) in
+                    city.weatherIconImage = image
+                    self.cities.append(city)
+                }
+            }
         }
-        cities = updatedCities
     }
 }
 

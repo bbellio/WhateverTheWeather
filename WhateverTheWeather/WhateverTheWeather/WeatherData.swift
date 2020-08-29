@@ -12,20 +12,18 @@ struct WeatherSnapshot: Decodable {
     
     let current: CurrentWeather
     let daily: [DailyWeather]
-    let name: String
     
 }
 
 struct CurrentWeather: Decodable {
     
-    let temp: Int
+    let temp: Double
     let weather: [WeatherFacts]
     
 }
 
 struct WeatherFacts: Decodable {
     
-//    let description: String
     let icon: String
     
 }
@@ -33,19 +31,18 @@ struct WeatherFacts: Decodable {
 struct DailyWeather: Decodable {
     
     // arbitrarily picking daily for pop
-    
     private enum CodingKeys: String, CodingKey {
         case chanceOfPrecipitaion = "pop"
     }
     
-    let chanceOfPrecipitaion: Int
+    let chanceOfPrecipitaion: Double
     
 }
 
 struct Temperature: Decodable {
     
-    let min: Int
-    let max: Int
+    let min: Double
+    let max: Double
     
 }
 

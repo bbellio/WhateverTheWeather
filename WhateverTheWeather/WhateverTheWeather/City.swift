@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct City {
     
@@ -14,7 +15,8 @@ struct City {
     let lon: Double
     let lat: Double
     // Assigned
-    var weather: WeatherSnapshot? = nil
+    var weather: WeatherSnapshot?
+    var weatherIconImage: UIImage?
     
 }
 

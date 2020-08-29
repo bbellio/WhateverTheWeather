@@ -19,9 +19,12 @@ class CityTableViewCell: UITableViewCell {
     
     // MARK: - Methods
     
-    func update(with name: String, temp: Int) {
-        cityNameLabel.text = name
-        cityTempLabel.text = "\(temp)℉"
+    func update(with city: City) {
+        cityNameLabel.text = city.name
+        if let temp = city.weather?.current.temp {
+            cityTempLabel.text = "\(temp)℉"
+        }
+        self.cityWeatherIcon.image = city.weatherIconImage
     }
 
 }
