@@ -20,8 +20,7 @@ struct Constants {
     static let apiKey = "da65fafb6cb9242168b7724fb5ab75e7"
     static let units = "units"
     static let unitsValue = "imperial"
-    // A fake snapshot data to publish when failing
-    static let failed = WeatherSnapshot(current: CurrentWeather(temp: 0, weather: []), daily: [])
+    static let failed = WeatherSnapshot(current: CurrentWeather(temp: 0, weather: []), daily: []) // A fake WeatherSnapshot to publish when a network call fails (currently not being used; would be used in the Combine methods in the NetworkController).
     
     
     // MARK: - CityDetailsViewController
@@ -33,11 +32,16 @@ struct Constants {
     
     // MARK: - Accessibility Identifiers
     
-    static let cityNameLabelIdentifier = "CityDetailViewController.CityNameLabel"
-    static let cityWeatherIconIdentifier = "CityDetailViewController.CityWeatherIcon"
-    static let currentTempLabelIdentifier = "CityDetailViewController.CurrentTempLabel"
+    static let detailPageCityNameLabelIdentifier = "CityDetailViewController.CityNameLabel"
+    static let detailPageCityWeatherIconIdentifier = "CityDetailViewController.CityWeatherIcon"
+    static let detailPageCurrentTempLabelIdentifier = "CityDetailViewController.CurrentTempLabel"
     static let lowTempLabelIdentifier = "CityDetailViewController.LowTempLabel"
     static let highTempLabelIdentifier = "CityDetailViewController.HighTempLabel"
     static let chanceOfPrecipitationLabelIdentifier = "CityDetailViewController.ChanceOfPrecipitationLabel"
+    
+    static let tableViewPageCityNameLabelIdentifier = "CityListTableViewCell.CityNameLabel"
+    static let tableViewPageCityCurrentTempLabelIdentifier = "CityListTableViewCell.CityTempLabel"
+    static let tableViewPageCityWeatherIconIdentifier = "CityListTableViewCell.CityWeatherIcon"
+    static let cityTableViewCellIdentifier = "CityListTableViewCell"
     
 }

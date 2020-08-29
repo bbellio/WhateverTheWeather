@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// A cell representing a given city. Displays the name, current temperature, and weather icon for the city.
 class CityTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
@@ -36,7 +37,10 @@ class CityTableViewCell: UITableViewCell {
     }
     
     func attachAccessibilityIdentifiers() {
-        
+        cityNameLabel.accessibilityIdentifier = Constants.tableViewPageCityNameLabelIdentifier
+        cityTempLabel.accessibilityIdentifier = Constants.tableViewPageCityCurrentTempLabelIdentifier
+        cityWeatherIcon.accessibilityIdentifier = Constants.tableViewPageCityWeatherIconIdentifier
+        self.accessibilityIdentifier = Constants.cityTableViewCellIdentifier
     }
 
 }

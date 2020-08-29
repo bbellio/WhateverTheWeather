@@ -13,10 +13,8 @@ class CityListTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    // Abstract these
     private let cellIdentifier = "cityCell"
     private let segueIdentifier = "toDetailVC"
-    private var subscriptions: [AnyCancellable] = []
     private var cities: [City] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -30,11 +28,11 @@ class CityListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        subscribeToCityData()
+        fetchCityData()
     }
     
     
-    // MARK: - Table View
+    // MARK: - TableView Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cities.count
@@ -61,22 +59,8 @@ class CityListTableViewController: UITableViewController {
     
     // MARK: - Networking
     
-    func subscribeToCityData() {
-//        var updatedCities: [City] = []
-//        for city in DisplayedCities.cities {
-//            var city = city
-//            NetworkController.publishWeatherData(for: city)
-//                .sink(receiveCompletion: { (completion) in
-//                    if case let .failure(error) = completion {
-//                        print(error)
-//                    }
-//                    self.cities = updatedCities
-//                }, receiveValue: { (weatherSnapshot) in
-//                    city.weather = weatherSnapshot
-//                    updatedCities.append(city)
-//                }).store(in: &subscriptions)
-//        }
-        
+    /// A method that makes the network call to obtain weather data for each city in `DisplayedCities.`
+    func fetchCityData() {
         for city in DisplayedCities.cities {
             var city = city
             NetworkController.getWeather(for: city) { (weather) in
@@ -88,5 +72,6 @@ class CityListTableViewController: UITableViewController {
             }
         }
     }
+    
 }
 

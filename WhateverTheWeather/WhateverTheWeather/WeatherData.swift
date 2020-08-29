@@ -29,18 +29,18 @@ struct WeatherFacts: Decodable {
 }
 
 struct DailyWeather: Decodable {
-    
-    // arbitrarily picking daily for pop
+
     private enum CodingKeys: String, CodingKey {
         case chanceOfPrecipitaion = "pop"
-        case temp = "temp"
+        case temp = "temp" // I know this isn't necessary, but it wasn't compiling without it
     }
-    let temp: Temperature
+    
+    let temp: TemperatureOverview
     let chanceOfPrecipitaion: Double
     
 }
 
-struct Temperature: Decodable {
+struct TemperatureOverview: Decodable {
     
     let min: Double
     let max: Double

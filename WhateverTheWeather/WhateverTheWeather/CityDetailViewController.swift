@@ -33,6 +33,7 @@ class CityDetailViewController: UIViewController {
         attachAccessibilityIdentifiers()
     }
     
+    
     // MARK: - Methods
     
     func updateView() {
@@ -56,9 +57,9 @@ class CityDetailViewController: UIViewController {
     }
     
     func attachAccessibilityIdentifiers() {
-        cityNameLabel.accessibilityIdentifier = Constants.cityNameLabelIdentifier
-        cityWeatherIcon.accessibilityIdentifier = Constants.cityWeatherIconIdentifier
-        currentTempLabel.accessibilityIdentifier = Constants.currentTempLabelIdentifier
+        cityNameLabel.accessibilityIdentifier = Constants.detailPageCityNameLabelIdentifier
+        cityWeatherIcon.accessibilityIdentifier = Constants.detailPageCityWeatherIconIdentifier
+        currentTempLabel.accessibilityIdentifier = Constants.detailPageCurrentTempLabelIdentifier
         lowTempLabel.accessibilityIdentifier = Constants.lowTempLabelIdentifier
         highTempLabel.accessibilityIdentifier = Constants.highTempLabelIdentifier
         chanceOfPrecipitationLabel.accessibilityIdentifier = Constants.chanceOfPrecipitationLabelIdentifier

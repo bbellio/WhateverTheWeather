@@ -14,7 +14,6 @@ struct City {
     let name: String
     let lon: Double
     let lat: Double
-    // Assigned
     var weather: WeatherSnapshot?
     var weatherIconImage: UIImage?
     
@@ -28,6 +27,7 @@ struct HardCodedCities {
 
 }
 
+/// Created to house only the cities you want displayed, and not necessarily all hardcoded cities.
 struct DisplayedCities {
     
     static let cities: [City] = [HardCodedCities.saltLakeCity, HardCodedCities.sanFrancisco, HardCodedCities.newYorkCity]

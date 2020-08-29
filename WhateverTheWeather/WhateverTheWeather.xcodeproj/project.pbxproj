@@ -21,6 +21,7 @@
 		FCA1E46224F9D610003677BD /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA1E46124F9D610003677BD /* CityTableViewCell.swift */; };
 		FCA1E46424F9DA37003677BD /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA1E46324F9DA37003677BD /* NetworkController.swift */; };
 		FCA1E46624F9DE9C003677BD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA1E46524F9DE9C003677BD /* Constants.swift */; };
+		FCAEA98F24FAE81200996BFA /* CityListTableViewCellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAEA98E24FAE81200996BFA /* CityListTableViewCellUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		FCA1E46124F9D610003677BD /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		FCA1E46324F9DA37003677BD /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		FCA1E46524F9DE9C003677BD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FCAEA98E24FAE81200996BFA /* CityListTableViewCellUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListTableViewCellUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				FC83BA9D24F8931A007DB918 /* CityDetailViewControllerUITests.swift */,
+				FCAEA98E24FAE81200996BFA /* CityListTableViewCellUITests.swift */,
 				FC83BA9F24F8931A007DB918 /* Info.plist */,
 			);
 			path = WhateverTheWeatherUITests;
@@ -357,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCAEA98F24FAE81200996BFA /* CityListTableViewCellUITests.swift in Sources */,
 				FC83BA9E24F8931A007DB918 /* CityDetailViewControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

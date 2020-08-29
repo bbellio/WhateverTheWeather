@@ -15,7 +15,7 @@ class WhateverTheWeatherTests: XCTestCase {
     var city: City!
     
     override func setUpWithError() throws {
-        testWeatherData = WeatherSnapshot(current: CurrentWeather(temp: 50, weather: [WeatherFacts(icon: "")]), daily: [DailyWeather(temp: Temperature(min: 25, max: 75), chanceOfPrecipitaion: 0.5)])
+        testWeatherData = WeatherSnapshot(current: CurrentWeather(temp: 50, weather: [WeatherFacts(icon: "")]), daily: [DailyWeather(temp: TemperatureOverview(min: 25, max: 75), chanceOfPrecipitaion: 0.5)])
         city = HardCodedCities.saltLakeCity
     }
 

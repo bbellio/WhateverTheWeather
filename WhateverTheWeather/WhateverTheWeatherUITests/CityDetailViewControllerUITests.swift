@@ -32,7 +32,6 @@ class CityDetailViewControllerUITests: XCTestCase {
         app.staticTexts["CityDetailViewController.ChanceOfPrecipitationLabel"]
     }
     
-    
     override func setUpWithError() throws {
         app.launch()
     }
