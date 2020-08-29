@@ -14,6 +14,7 @@ class CityDetailViewController: UIViewController {
     
     var city: City?
     
+    
     // MARK: - Outlets
     
     @IBOutlet weak var cityNameLabel: UILabel!
@@ -29,6 +30,7 @@ class CityDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
+        attachAccessibilityIdentifiers()
     }
     
     // MARK: - Methods
@@ -51,6 +53,15 @@ class CityDetailViewController: UIViewController {
             chanceOfPrecipitationLabel.text = "\(percentage)\(Constants.chanceOfPrecipitationString)"
         }
         title = "\(city.name) Weather"
+    }
+    
+    func attachAccessibilityIdentifiers() {
+        cityNameLabel.accessibilityIdentifier = Constants.cityNameLabelIdentifier
+        cityWeatherIcon.accessibilityIdentifier = Constants.cityWeatherIconIdentifier
+        currentTempLabel.accessibilityIdentifier = Constants.currentTempLabelIdentifier
+        lowTempLabel.accessibilityIdentifier = Constants.lowTempLabelIdentifier
+        highTempLabel.accessibilityIdentifier = Constants.highTempLabelIdentifier
+        chanceOfPrecipitationLabel.accessibilityIdentifier = Constants.chanceOfPrecipitationLabelIdentifier
     }
     
 }

@@ -74,7 +74,6 @@ struct NetworkController {
             }
             do {
                 let decodedSearchResults = try JSONDecoder().decode(WeatherSnapshot.self, from: data)
-                print(decodedSearchResults)
                 completion(decodedSearchResults)
             } catch {
                 let error = error

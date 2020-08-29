@@ -24,9 +24,20 @@ struct Constants {
     static let failed = WeatherSnapshot(current: CurrentWeather(temp: 0, weather: []), daily: [])
     
     
-    // MARK: - Details Page
+    // MARK: - CityDetailsViewController
     
     static let chanceOfPrecipitationString = "% chance of precipitation"
     static let highOf = "high of"
     static let lowOf = "low of"
+    
+    
+    // MARK: - Accessibility Identifiers
+    
+    static let cityNameLabelIdentifier = "CityDetailViewController.CityNameLabel"
+    static let cityWeatherIconIdentifier = "CityDetailViewController.CityWeatherIcon"
+    static let currentTempLabelIdentifier = "CityDetailViewController.CurrentTempLabel"
+    static let lowTempLabelIdentifier = "CityDetailViewController.LowTempLabel"
+    static let highTempLabelIdentifier = "CityDetailViewController.HighTempLabel"
+    static let chanceOfPrecipitationLabelIdentifier = "CityDetailViewController.ChanceOfPrecipitationLabel"
+    
 }

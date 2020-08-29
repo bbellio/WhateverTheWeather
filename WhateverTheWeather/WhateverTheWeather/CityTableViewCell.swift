@@ -17,6 +17,13 @@ class CityTableViewCell: UITableViewCell {
     @IBOutlet weak var cityWeatherIcon: UIImageView!
     
     
+    // MARK: - Life Cycle
+    
+    override func awakeFromNib() {
+        attachAccessibilityIdentifiers()
+    }
+    
+    
     // MARK: - Methods
     
     func update(with city: City) {
@@ -26,6 +33,10 @@ class CityTableViewCell: UITableViewCell {
         }
         self.cityWeatherIcon.image = city.weatherIconImage
         self.selectionStyle = .none
+    }
+    
+    func attachAccessibilityIdentifiers() {
+        
     }
 
 }
