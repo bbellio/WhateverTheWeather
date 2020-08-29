@@ -53,7 +53,7 @@ class CityListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifier {
             guard let indexPath = tableView.indexPathForSelectedRow,
-                           let destination = segue.destination as? DetailViewController else { return }
+                           let destination = segue.destination as? CityDetailViewController else { return }
                        destination.city = cities[indexPath.row]
         }
     }
